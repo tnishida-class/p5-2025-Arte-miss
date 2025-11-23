@@ -1,0 +1,125 @@
+function setup() {
+  createCanvas(400, 200);
+  textSize(32);
+  textAlign(CENTER, CENTER);
+}
+
+function draw() {
+  background(220);
+  
+  // 0から100までのランダムな整数を生成
+  let randomNumber = int(random(0, 101));
+  
+  // キャンバス中央に表示
+  text(randomNumber, width / 2, height / 2);
+}
+
+
+
+
+
+
+//なんかいい感じにできたやつ↓
+function keyPressed() {
+  if (key == "1") {
+    fill(200);
+    noStroke();
+    rect(0, 0, 133, 200);
+    fill(0);
+    let roll1 = int(random(1, 7));
+
+    text(roll1, width / 4, height / 2);
+  }
+  if (key == "2") {
+    fill(200);
+    noStroke();
+    rect(133, 0, 134, 200);
+    fill(0);
+    let roll2 = int(random(1, 7));
+
+    text(roll2, width / 2, height / 2);
+  }
+  if (key == "3") {
+    fill(200);
+    noStroke();
+    rect(267, 0, 133, 200);
+    fill(0);
+    let roll3 = int(random(1, 7));
+
+    text(roll3, 3 * width / 4, height / 2);
+  }
+}
+
+
+//だいぶいい感じになったやつ↓
+function draw() {
+
+  if (keyIsDown("1".charCodeAt(0))) {
+    fill(200);
+    noStroke();
+    rect(0, 0, 133, 200);
+    fill(0);
+    let roll1 = int(random(1, 7));
+
+    text(roll1, width / 4, height / 2);
+  }
+  if (keyIsDown("2".charCodeAt(0))) {
+    fill(200);
+    noStroke();
+    rect(133, 0, 134, 200);
+    fill(0);
+    let roll2 = int(random(1, 7));
+
+    text(roll2, width / 2, height / 2);
+  }
+  if (keyIsDown("3".charCodeAt(0))) {
+    fill(200);
+    noStroke();
+    rect(267, 0, 133, 200);
+    fill(0);
+    let roll3 = int(random(1, 7));
+
+    text(roll3, 3 * width / 4, height / 2);
+  }
+}
+
+
+
+//もうちょいでできそうなやつ↓
+function setup() {
+  createCanvas(400, 200);
+  textSize(32);
+  textAlign(CENTER, CENTER);
+  fill(200);
+  noStroke();
+  rect(0, 0, 400, 200);
+}
+
+function draw() {
+  let roll1 = int(random(1, 7));
+  let roll2 = int(random(1, 7));
+  let roll3 = int(random(1, 7));
+  let sum = roll1 + roll2 + roll3;
+
+  if (keyIsDown("1".charCodeAt(0))) {
+    fill(200);
+    noStroke();
+    rect(0, 0, 133, 200);
+    fill(0);
+    text(roll1, width / 4, height / 2);
+    fill(200);
+    noStroke();
+    rect(133, 0, 134, 200);
+    fill(0);
+    text(roll2, width / 2, height / 2);
+    fill(200);
+    noStroke();
+    rect(267, 0, 133, 200);
+    fill(0); 4
+    text(roll3, 3 * width / 4, height / 2);
+  }
+    if (sum < 4) {
+      fill(0);
+      text(sum, width / 2, height / 4);
+    }
+}
